@@ -22,6 +22,7 @@ base = 'http://localhost:9200/workers/worker'
 es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
 
 
+
 r = requests.get('http://localhost:9200')
 
 
