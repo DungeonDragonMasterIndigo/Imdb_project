@@ -1,2 +1,6 @@
 pip install flask flask-jsonpify flask-sqlalchemy flask-restful
 pip install -U flask-cors
+npm install --save @angular/material
+npm install --save @angular/animations
+npm install --save @angular/cdk
+
