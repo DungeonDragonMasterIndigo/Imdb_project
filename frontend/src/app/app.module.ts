@@ -8,7 +8,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { MovieTableComponent } from './movie-table/movie-table.component';
 import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { MovieService } from './services/movie.service';
 
 
 @NgModule({
@@ -26,7 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSortModule
 
   ],
-  providers: [],
+  providers: [MovieService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

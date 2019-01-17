@@ -3,4 +3,4 @@ pip install -U flask-cors
 npm install --save @angular/material
 npm install --save @angular/animations
 npm install --save @angular/cdk
-
+npm install --save rxjs-compat

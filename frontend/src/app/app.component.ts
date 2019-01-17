@@ -23,5 +23,6 @@ export class AppComponent implements OnInit {
       this.movieData = data as JSON;
       console.log(this.movieData);
     })
-}
+  }
+
 }

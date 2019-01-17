@@ -1,21 +1,30 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatSort } from '@angular/material';
-import { MovieTableDataSource } from './movie-table-datasource';
+import { Component, OnInit } from '@angular/core';
+import { MovieService } from '../services/movie.service';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+import {DataSource} from '@angular/cdk/collections';
+import { Movie } from '../models/movie.model';
 
 @Component({
-  selector: 'app-movie-table',
-  templateUrl: './movie-table.component.html',
-  styleUrls: ['./movie-table.component.css']
+  selector: 'movietable',
+  templateUrl: './movietable.component.html',
+  styleUrls: ['./movietable.component.css']
 })
-export class MovieTableComponent implements OnInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-  dataSource: MovieTableDataSource;
-
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+export class MovietableComponent implements OnInit {
+  dataSource = new MovieDataSource(this.movieService);
+  displayedColumns = ['name', 'email', 'phone', 'company'];
+  constructor(private movieService: MovieService) { }
 
   ngOnInit() {
-    this.dataSource = new MovieTableDataSource(this.paginator, this.sort);
   }
+}
+
+export class MovieDataSource extends DataSource<any> {
+  constructor(private userService: MovieService) {
+    super();
+  }
+  connect(): Observable<Movie[]> {
+    return this.userService.getMovies();
+  }
+  disconnect() {}
 }

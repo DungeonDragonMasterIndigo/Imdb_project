@@ -33,17 +33,21 @@ const EXAMPLE_DATA: MovieTableItem[] = [
   {id: 20, name: 'Calcium'},
 ];
 
+
 /**
  * Data source for the MovieTable view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
 export class MovieTableDataSource extends DataSource<MovieTableItem> {
-  data: MovieTableItem[] = EXAMPLE_DATA;
+  data: MovieTableItem[] ;
 
   constructor(private paginator: MatPaginator, private sort: MatSort) {
     super();
   }
+
+
+
 
   /**
    * Connect this data source to the table. The table will only update when
