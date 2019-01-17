@@ -7,12 +7,12 @@ import { Movie } from '../models/movie.model';
 
 @Component({
   selector: 'movietable',
-  templateUrl: './movietable.component.html',
-  styleUrls: ['./movietable.component.css']
+  templateUrl: './movie-table.component.html',
+  styleUrls: ['./movie-table.component.css']
 })
-export class MovietableComponent implements OnInit {
+export class MovieTableComponent implements OnInit {
   dataSource = new MovieDataSource(this.movieService);
-  displayedColumns = ['name', 'email', 'phone', 'company'];
+  displayedColumns = ["titleId",  "ordering", "title"];
   constructor(private movieService: MovieService) { }
 
   ngOnInit() {

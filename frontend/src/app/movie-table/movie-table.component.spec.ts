@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule, MatSortModule, MatTableModule } from '@angular/material';
 
-import { MovieTableComponent } from './movie-table.component';
+
 
 describe('MovieTableComponent', () => {
   let component: MovieTableComponent;
@@ -17,6 +17,7 @@ describe('MovieTableComponent', () => {
         MatSortModule,
         MatTableModule,
       ]
+      exports: [MovieTableComponent]
     }).compileComponents();
   }));
 
